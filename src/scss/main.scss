@@ -14,22 +14,25 @@ body {
   background: #5D26C1;
   background: -webkit-linear-gradient(to bottom, #5D26C1, #a17fe0, #59C173);  
   background: linear-gradient(to bottom, #5D26C1, #a17fe0, #59C173);
-  height: fit-content;
-  margin: 0 5px;
+  min-height: 100vh;
+  padding: 8px;
   display: grid;
   grid-template-columns: 1fr 10fr 1fr;
 }
 
 .main {
   min-width: 480px;
+  max-width: 928px;
+  width: 100%;
   height: fit-content;
-  margin: 32px 0;
-  padding: 40px 10px;
+  margin: auto;
+  padding: 20px 10px;
+  box-shadow: 0 0 12px #0000003f;
   background: #ffffff87;
   grid-column-start: 2;
 }
 .header {
-  margin: 0 0 
+  margin: 0 0 24px;
   color: #ffffff;
   text-align: center;
 }
@@ -45,24 +48,29 @@ body {
   width:100%;
   margin: 0 auto;
   position: relative;
-}
-.textarea__input {
+  &__input {
   width:100%;
   min-height: 312px;
   padding: 10px;
-}
-.textarea__questions {
-  max-width: 450px;
-  width: 100%;
+  }
+  &__questions {
+  width: fit-content;
   padding: 10px;
-margin: 0;
-font-size: 10px;
+  margin: 0;
+  font-size: 12px;
   list-style: none;
   background: lemonchiffon;
-position: absolute;
-}
+  position: absolute;
+  display: none;
+}}
 .list-item {
 
+}
+.buttons {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: end;
+  margin-right: 88px;
 }
 .button-load {
 
@@ -71,7 +79,8 @@ position: absolute;
 
 }
 .prompt {
+  width: fit-content;
   padding: 8px;
-  list-style: none;
+  font-size: 12px;
   background: lemonchiffon;
 }
