@@ -18,7 +18,7 @@ loadData.addEventListener('click', (e) => {
   textarea.value = localStorage.getItem('textarea');
 });
 
-saveData.addEventListener('mousemove', (e) => {
+saveData.addEventListener('mouseover', (e) => {
   hidePrompt.classList.add('prompt--hidden');
 });
 textarea.addEventListener('mouseover', (e) => {

@@ -90,29 +90,28 @@ body {
   }
 }
 
+@mixin buttonShape {
+  width: 200px;
+  height: 48px;
+  border-radius: 4px;
+  border: none;
+  color: #fff;
+}
 .button {
   display: flex;
   justify-content: flex-end;
   grid-area: buttons;
   &__load {
+    @include buttonShape;
     margin-right: 14px;
-    width: 200px;
-    height: 48px;
     background: linear-gradient(180deg, #4DBC7C 0%, #219653 100%);
-    border-radius: 4px;
-    border: none;
-    color: #fff;
     &:hover {
       background: #219653;
     }
   }
   &__save{
-    width: 200px;
-    height: 48px;
+    @include buttonShape;
     background: linear-gradient(180deg, #DC6262 0%, #C83939 100%);
-    border-radius: 4px;
-    border: none;
-    color: #fff;
     position: relative;
     &:hover {
       background: #C83939;
