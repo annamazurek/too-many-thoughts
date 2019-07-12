@@ -63,61 +63,60 @@ body {
   grid-area: form;
   margin: 0;
 }
-.textarea {
- 
+.textarea-container {
   width:100%;
   margin: 0;
-  &__input {
+}
+.textarea {
   width:100%;
   min-height: 312px;
   padding: 10px;
   resize: vertical;
   position: relative;
   border-radius: 4px;
-  }
   &__questions {
-  width: fit-content;
-  padding: 10px;
-  margin: 0;
-  font-size: 12px;
-  list-style: none;
-  background: lemonchiffon;
-  position: absolute;
-  align-self: auto;
-  display: none;
+    width: fit-content;
+    padding: 10px;
+    margin: 0;
+    font-size: 12px;
+    list-style: none;
+    background: lemonchiffon;
+    position: absolute;
+    align-self: auto;
+    display: none;
+    &--show {
+      display: block;
+    }
   }
 }
-.list-item {
 
-}
-.buttons {
+.button {
   display: flex;
   justify-content: flex-end;
   grid-area: buttons;
-
-}
-.button-load {
-  margin-right: 14px;
-  width: 200px;
-  height: 48px;
-  background: linear-gradient(180deg, #4DBC7C 0%, #219653 100%);
-  border-radius: 4px;
-  border: none;
-  color: #fff;
-  &:hover {
-    background: #219653;
+  &__load {
+    margin-right: 14px;
+    width: 200px;
+    height: 48px;
+    background: linear-gradient(180deg, #4DBC7C 0%, #219653 100%);
+    border-radius: 4px;
+    border: none;
+    color: #fff;
+    &:hover {
+      background: #219653;
+    }
   }
-}
-.button-save{
-  width: 200px;
-  height: 48px;
-  background: linear-gradient(180deg, #DC6262 0%, #C83939 100%);
-  border-radius: 4px;
-  border: none;
-  color: #fff;
-  position: relative;
-  &:hover {
-    background: #C83939;
+  &__save{
+    width: 200px;
+    height: 48px;
+    background: linear-gradient(180deg, #DC6262 0%, #C83939 100%);
+    border-radius: 4px;
+    border: none;
+    color: #fff;
+    position: relative;
+    &:hover {
+      background: #C83939;
+    }
   }
 }
 .prompt {
@@ -130,4 +129,7 @@ body {
   position: absolute;
   margin-top: 50px;
   border-radius: 4px;
+  &--hidden {
+    display: none;
+  }
 }

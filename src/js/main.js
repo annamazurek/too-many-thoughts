@@ -2,9 +2,35 @@
 
 import moment from 'moment';
 
-console.log(moment().format('MM DD YYYY, h:mm:ss a'))
+console.log(moment().format('MM DD YYYY, h:mm:ss a'));
+
+const loadData = document.querySelector('.button__load--js');
+const saveData = document.querySelector('.button__save--js');
+const textarea = document.querySelector('.textarea--js');
+const hidePrompt = document.querySelector('.prompt');
+const showQuestions = document.querySelector('.textarea__questions');
+
+
+saveData.addEventListener('click', (e) => {
+  localStorage.setItem('textarea', textarea.value);
+});
+loadData.addEventListener('click', (e) => {
+  textarea.value = localStorage.getItem('textarea');
+});
+
+saveData.addEventListener('mousemove', (e) => {
+  hidePrompt.classList.add('prompt--hidden');
+});
+textarea.addEventListener('mouseover', (e) => {
+  showQuestions.classList.toggle('textarea__questions--show');
+});
 
 /*
+buttonLoad.addEventListener('keyup', (e) =>
+  localstorage.getItem('')...
+)
+
+
 //NAUKA ARRAY METHODS
 const mySkills = ['html', 'css', 'js', 'git', 'gulp', 'figma'];
 
