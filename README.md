@@ -1,4 +1,12 @@
-# wtf-gulp-starter
+# Too many thoughts?
+This simple app will help you  to organize your thoughts.
+
+
+
+
+## How to execute my page locally
+
+To execute my page locally follow the instruction:
 
 `npm install -g gulp-cli`
 
@@ -7,3 +15,6 @@
 `gulp`
 
 To publish your page using github pages use `npm run deploy`
+
+
+Visit my business-card: [Kliknij](https://annamazurek.github.io/business-card/)
