@@ -62,18 +62,6 @@ body {
 .form {
   grid-area: form;
   margin: 0;
-}
-.textarea-container {
-  width:100%;
-  margin: 0;
-}
-.textarea {
-  width:100%;
-  min-height: 312px;
-  padding: 10px;
-  resize: vertical;
-  position: relative;
-  border-radius: 4px;
   &__questions {
     width: fit-content;
     padding: 10px;
@@ -90,6 +78,19 @@ body {
       display: block;
     }
   }
+}
+.textarea-container {
+  width:100%;
+  margin: 0;
+}
+.textarea {
+  width:100%;
+  min-height: 312px;
+  height: 100%;
+  padding: 10px;
+  resize: vertical;
+  position: relative;
+  border-radius: 4px;
 }
 
 @mixin buttonShape {
