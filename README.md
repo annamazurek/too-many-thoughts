@@ -1,7 +1,7 @@
 # Too many thoughts?
 This simple app will help you  to organize your thoughts.
 
-![page screenshot](gh_img/screenshoot.png)
+![page screenshot](gh_img/screenshoot.PNG)
 
 
 ## How to execute my page locally
