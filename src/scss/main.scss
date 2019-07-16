@@ -22,7 +22,6 @@ body {
   display: grid;
   grid-template-columns: 1fr 10fr 1fr;
 }
-
 .main {
   min-width: 480px;
   max-width: 928px;
@@ -41,6 +40,7 @@ body {
     ". buttons .";
   grid-row-gap: 24px;
 }
+// HEADER //
 .header {
   margin: 0;
   font-family: 'Cabin Sketch', Georgia, 'Arial';
@@ -49,16 +49,7 @@ body {
   grid-area: header;
   font-size: 64px;
 }
-.note {
-  max-width: 736px;
-  width:100%;
-  margin: 0;
-  font-size: 16px;
-  line-height: 20px;
-  text-align: center;
-  color: #fff;
-  grid-area: note;
-}
+// CONTENT //
 .form {
   grid-area: form;
   margin: 0;
@@ -72,17 +63,25 @@ body {
     background: lemonchiffon;
     position: absolute;
     align-self: auto;
-    display: none;
     z-index: 2;
+    opacity: 0;
+    transition: opacity 0.5s linear;
     &--show {
-      display: block;
+      opacity: 1;
     }
   }
 }
-.textarea-container {
+.note {
+  max-width: 736px;
   width:100%;
   margin: 0;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: #fff;
+  grid-area: note;
 }
+
 .textarea {
   width:100%;
   min-height: 312px;
@@ -92,7 +91,12 @@ body {
   position: relative;
   border-radius: 4px;
 }
+.textarea-container {
+  width:100%;
+  margin: 0;
+}
 
+// BUTTONS //
 @mixin buttonShape {
   max-width: 200px;
   width: 100%;
@@ -132,11 +136,14 @@ body {
   position: absolute;
   margin-top: 50px;
   border-radius: 4px;
+  opacity: 1;
+  transition: opacity .5s linear;
   &--hidden {
-    display: none;
+    opacity: 0;
   }
 }
 
+//MEDIA QUERIES //
 @media (max-width: 640px) {
   .header {
     font-size: 32px;

@@ -12,7 +12,8 @@
 <body>
   <main class="main">
     <h1 class="header">Too many thoughts?</h1>
-    <p class="note">Write down your worries, ideas etc. It will help you to organize your thoughts and make a decision. You can ask yourself some questions to solve your problems.
+    <p class="note">Write down your worries, ideas etc. It will help you to organize your thoughts and make a decision.
+      You can ask yourself some questions to solve your problems.
     </p>
 
     <form class="form">
@@ -21,20 +22,21 @@
         <textarea autofocus class="textarea textarea--js" name="textarea" id="textarea"
           placeholder="Hover the mouse cursor over to see questions that can be helpful"></textarea>
       </p>
+      
       <ul class="form__questions">
-        <li class="list-item">Why is it a problem?</li>
-        <li class="list-item">Why do you want to solve it? What it will give you in the future?</li>
-        <li class="list-item">What you can do to solve it? Write down your options.</li>
-        <li class="list-item">Can someone help you? Who and how?</li>
-        <li class="list-item">How can you achieve your goal? What do you need?</li>
-        <li class="list-item">When do you want to achieve this goal?</li>
+        <li class="questions__list-item">Why is it a problem?</li>
+        <li class="questions__list-item">Why do you want to solve it? What it will give you in the future?</li>
+        <li class="questions__list-item">What you can do to solve it? Write down your options.</li>
+        <li class="questions__list-item">Can someone help you? Who and how?</li>
+        <li class="questions__list-item">How can you achieve your goal? What do you need?</li>
+        <li class="questions__list-item">When do you want to achieve this goal?</li>
       </ul>
     </form>
     <div class="button">
-        <button class="button__load button__load--js">Load</button>
-        <button class="button__save button__save--js">Save</button>
-        <div class="prompt">⬆ Click this button to save your note</div>
-      </div>
+      <button class="button__load button__load--js">Load</button>
+      <button class="button__save button__save--js">Save</button>
+      <div class="prompt">⬆ Click this button to save your note</div>
+    </div>
   </main>
   <script src="js/main.js"></script>
 </body>
