@@ -1,5 +1,5 @@
 @import "_normalize";
-@import "_variables";
+@import "_variables.scss";
 @import url('https://fonts.googleapis.com/css?family=ABeeZee:400,400i&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Cabin+Sketch:400,700&display=swap');
 
@@ -13,9 +13,9 @@ html {
 
 body {
   font-family: "ABeeZee", Georgia, 'Arial';
-  background: #5D26C1;
-  background: -webkit-linear-gradient(to bottom, #5D26C1, #a17fe0, #59C173);  
-  background: linear-gradient(to bottom, #5D26C1, #a17fe0, #59C173);
+  background: $seashell;
+  // background: -webkit-linear-gradient(to bottom, #5D26C1, #a17fe0, #59C173);  
+  // background: linear-gradient(to bottom, #5D26C1, #a17fe0, #59C173);
   background-attachment: fixed;
   min-height: 100vh;
   padding: 8px;
@@ -29,8 +29,8 @@ body {
   height: fit-content;
   margin: auto;
   padding: 40px 10px;
-  box-shadow: 0 0 12px #0000003f;
-  background: #ffffff87;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.247);
+  background: $teal;
   grid-column-start: 2;
   display: grid;
   grid-template-areas:
@@ -53,23 +53,34 @@ body {
 .form {
   grid-area: form;
   margin: 0;
-  &__questions {
-    width: fit-content;
-    padding: 10px;
+  &__textarea {
     margin: 0;
-    font-size: 12px;
+    width:100%;
+    min-height: 312px;
+    height: 100%;
+    padding: 10px;
+    background: $lightGrey;
+    resize: vertical;
+    position: relative;
     border-radius: 4px;
-    list-style: none;
-    background: lemonchiffon;
-    position: absolute;
-    align-self: auto;
-    z-index: 2;
-    opacity: 0;
-    transition: opacity 0.5s linear;
-    &--show {
-      opacity: 1;
-    }
   }
+  // &__questions {
+  //   width: fit-content;
+  //   padding: 10px;
+  //   margin: 0;
+  //   font-size: 12px;
+  //   border-radius: 4px;
+  //   list-style: none;
+  //   background: lemonchiffon;
+  //   position: absolute;
+  //   align-self: auto;
+  //   z-index: 2;
+  //   opacity: 0;
+  //   transition: opacity 0.5s linear;
+  //   &--show {
+  //     opacity: 1;
+  //   }
+  // }
 }
 .note {
   max-width: 736px;
@@ -82,19 +93,17 @@ body {
   grid-area: note;
 }
 
-.textarea {
-  width:100%;
-  min-height: 312px;
-  height: 100%;
-  padding: 10px;
-  resize: vertical;
-  position: relative;
-  border-radius: 4px;
-}
-.textarea-container {
-  width:100%;
-  margin: 0;
-}
+// .textarea {
+//   width:100%;
+//   min-height: 312px;
+//   height: 100%;
+//   padding: 10px;
+//   background: $lightGrey;
+//   resize: vertical;
+//   position: relative;
+//   border-radius: 4px;
+// }
+
 
 // BUTTONS //
 @mixin buttonShape {
@@ -112,36 +121,46 @@ body {
   &__load {
     @include buttonShape;
     margin-right: 14px;
-    background: linear-gradient(180deg, #4DBC7C 0%, #219653 100%);
+    background: linear-gradient(180deg, $taupe 0%, $taupe 100%);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.247);
+    cursor: pointer;
+    transition: transform .3s ease-in-out;
     &:hover {
-      background: #219653;
+      transform: scale(1.05);
+      transition: transform .3s ease-in-out;
+      // background: #219653;
     }
   }
   &__save{
     @include buttonShape;
-    background: linear-gradient(180deg, #DC6262 0%, #C83939 100%);
+    background: linear-gradient(180deg, $tangerine 0%, $tangerine 100%);
     position: relative;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.247);
+    cursor: pointer;
+    transition: transform .3s ease-in-out;
     &:hover {
-      background: #C83939;
+      transform: scale(1.05);
+      transition: transform .3s ease-in-out;
+      // background: $grey;
     }
   }
 }
-.prompt {
-  max-width: 200px;
-  width: fit-content;
-  padding: 8px;
-  font-size: 12px;
-  background: lemonchiffon;
-  color: #000;
-  position: absolute;
-  margin-top: 50px;
-  border-radius: 4px;
-  opacity: 1;
-  transition: opacity .5s linear;
-  &--hidden {
-    opacity: 0;
-  }
-}
+// .prompt {
+//   max-width: 200px;
+//   width: fit-content;
+//   padding: 8px;
+//   font-size: 12px;
+//   background: lemonchiffon;
+//   color: #000;
+//   position: absolute;
+//   margin-top: 50px;
+//   border-radius: 4px;
+//   opacity: 1;
+//   transition: opacity .5s linear;
+//   &--hidden {
+//     opacity: 0;
+//   }
+// }
 
 //MEDIA QUERIES //
 @media (max-width: 640px) {
