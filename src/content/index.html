@@ -16,27 +16,16 @@
 
 <body>
   <main class="main">
-    <h1 class="header">Simple Note App</h1>
-    <p class="note">
-      
-    </p>
+    <h1 class="main__header">Simple Note App</h1>
+    <div class="main__content">
+      <form class="form">
+          <textarea autofocus class="form__textarea form__textarea--js" name="textarea" id="textarea" placeholder="Write new note" aria-label="Write here your note"></textarea>
+      </form>
 
-    <form class="form">
-        <textarea autofocus class="form__textarea form__textarea--js" name="textarea" id="textarea" placeholder="Write new note" aria-label="Write here your note"></textarea>
-      
-      <!-- <ul class="form__questions">
-        <li class="questions__list-item">Why is it a problem?</li>
-        <li class="questions__list-item">Why do you want to solve it? What it will give you in the future?</li>
-        <li class="questions__list-item">What you can do to solve it? Write down your options.</li>
-        <li class="questions__list-item">Can someone help you? Who and how?</li>
-        <li class="questions__list-item">How can you achieve your goal? What do you need?</li>
-        <li class="questions__list-item">When do you want to achieve this goal?</li>
-      </ul> -->
-    </form>
-    <div class="button">
-      <button class="button__load button__load--js">Load</button>
-      <button class="button__save button__save--js">Save</button>
-      <!-- <div class="prompt">⬆ Click this button to save your note</div> -->
+      <div class="button">
+        <button class="button__load button__load--js">Load</button>
+        <button class="button__save button__save--js">Save</button>
+      </div>
     </div>
   </main>
   <script src="js/main.js"></script>
