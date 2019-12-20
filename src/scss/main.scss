@@ -13,67 +13,55 @@ html {
 
 body {
   font-family: "ABeeZee", Georgia, 'Arial';
-  background: url(../assets/img/drawing-pad-1209781_1920.jpg) no-repeat fixed top center;
+  background: url(../assets/img/drawing-pad-1209781_1920.jpg) no-repeat fixed bottom center;
   background-size: cover;
-  // background: $seashell;
-  // background: -webkit-linear-gradient(to bottom, #5D26C1, #a17fe0, #59C173);  
-  // background: linear-gradient(to bottom, #5D26C1, #a17fe0, #59C173);
-  // background-attachment: fixed;
-  min-height: 100vh;
+  height: 100vh;
   padding: 8px;
   display: flex;
   justify-content: center;
   align-items: center;
-  // display: grid;
-  // grid-template-columns: 1fr 10fr 1fr;
 }
 .main {
-  &__content{
-  min-width: 300px;
-  width: 90vw;
-  // width: 100%;
-  height: fit-content;
-  margin: auto;
-  // padding: 40px 10px;
-  padding: 16px;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.247);
-  // background: $teal;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  // grid-column-start: 2;
-  // display: grid;
-  // grid-template-areas:
-  //   ". form ."
-  //   ". buttons .";
-  // grid-row-gap: 24px;
-  }
   &__header {
     margin: 0;
     padding: 10px 0;
     font-family: 'Cabin Sketch', Georgia, 'Arial';
     color: $grey;
     text-align: center;
-    font-size: 64px;
+    width: 100%;
+    background: rgba(253, 253, 253, 0.678);
+    font-size: 4rem;
+    position: absolute;
+    top: 3.5%;
+    left: 0;
+    right: 0;
+  }
+  &__content{
+  min-width: 300px;
+  width: 60vw;
+  height: 60vh;
+  margin: 5% 0 0;
+  padding: 16px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   }
 }
 
 // FORM //
 .form {
-  grid-area: form;
   margin-bottom: 16px;
   &__textarea {
     // margin: 0;
     width:100%;
-    min-height: 312px;
-    height: 100%;
+    height: 50vh;
     padding: 10px;
-    // background: $lightGrey;
     background: none;
     resize: vertical;
     position: relative;
     border-radius: 4px;
+    font-size: large;
   }
 }
 
@@ -85,68 +73,67 @@ body {
   border-radius: 4px;
   border: none;
   color: #fff;
+  cursor: pointer;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.247);
+
+  transition: transform .3s ease-in-out;
+  &:hover {
+    transform: scale(1.05);
+    transition: transform .3s ease-in-out;
+  }
+
 }
 .button {
   display: flex;
   justify-content: flex-end;
-  grid-area: buttons;
+  // grid-area: buttons;
   &__load {
     @include buttonShape;
     margin-right: 14px;
     background: $taupe;
-    // background: linear-gradient(180deg, $taupe 0%, $taupe 100%);
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.247);
-    cursor: pointer;
-    transition: transform .3s ease-in-out;
-    &:hover {
-      transform: scale(1.05);
-      transition: transform .3s ease-in-out;
-    }
   }
   &__save{
     @include buttonShape;
     background: linear-gradient(180deg, $tangerine 0%, $tangerine 100%);
     position: relative;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.247);
-    cursor: pointer;
-    transition: transform .3s ease-in-out;
-    &:hover {
-      transform: scale(1.05);
-      transition: transform .3s ease-in-out;
-      // background: $grey;
-    }
+    &--showInfo {
+      &::after {
+        content: 'Note saved.';
+        position: absolute;
+        width: 300px;
+        height: 50px;
+        bottom: 0;
+        text-align: center;
+        padding: 15px;
+        background: rgba(255, 255, 255, 0.856);
+        @keyframes opacity {
+          0% { translateY: -20%; }
+          // 50% { translateY: -20px; }
+          100% { translateY: 0%; }
+        }
+        animation: opacity 5s ease-in-out;
+        // transition: opacity 1s ease-in-out;
+      }
+    } 
   }
 }
 
 //MEDIA QUERIES //
-@media (max-width: 640px) {
-  .header {
-    font-size: 32px;
-  }
+@media (max-width: 640px), (max-height: 340px) {
   .main {
-    grid-row-gap: 14px;
+    &__header {
+      font-size: 3rem;
+    }
+  }
+  .button__load, .button__save {
+    max-width: 100px;
+    height: 34px;
   }
 }
-@media (max-width: 500px) {
-  body {
-    padding: 2px;
-    display: block;
-    font-size: 12px;
-  }
+@media (max-width: 360px) {
   .main {
-    min-width: 300px;
-    max-width: 500px;
-    width: 100%;
-  }
-  .note {
-    font-size: 12px;
-  }
-  .prompt {
-    display: none;
-  }
-  .textarea__questions {
-    max-width: 280px;
-    width:100%;
-    font-size: 10px;
+    &__header {
+      font-size: 2.5rem;
+    }
   }
 }
